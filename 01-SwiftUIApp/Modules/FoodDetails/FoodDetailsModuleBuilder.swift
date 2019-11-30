@@ -6,4 +6,11 @@
 //  Copyright © 2019 Oleg Shipulin. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+
+enum FoodDetailsModuleBuilder {
+
+    static func makeView(foodName: String) -> some View {
+        return FoodDetailsView(foodName: foodName)
+    }
+}

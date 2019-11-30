@@ -10,12 +10,12 @@ import SwiftUI
 
 struct StartView: View {
 
-    @Binding var link: DeepLink
+    @Binding var tab: TabType
     @Binding var foodOpeningIndex: Int?
 
     var body: some View {
         Button(action: {
-            self.link = .foodList
+            self.tab = .foodList
             self.foodOpeningIndex = 2
         }) {
             Text("Start")
@@ -25,10 +25,10 @@ struct StartView: View {
 
 struct StartView_Previews: PreviewProvider {
 
-    @State static var link: DeepLink = .start
+    @State static var tab: TabType = .start
     @State static var foodOpeningIndex: Int? = nil
 
     static var previews: some View {
-        StartView(link: $link, foodOpeningIndex: $foodOpeningIndex)
+        StartView(tab: $tab, foodOpeningIndex: $foodOpeningIndex)
     }
 }

@@ -6,4 +6,11 @@
 //  Copyright © 2019 Oleg Shipulin. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
+
+enum StartModuleBuilder {
+
+    static func makeView(tab: Binding<TabType>, foodOpeningIndex: Binding<Int?>) -> some View {
+        return StartView(tab: tab, foodOpeningIndex: foodOpeningIndex)
+    }
+}

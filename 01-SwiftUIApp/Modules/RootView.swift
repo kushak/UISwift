@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-enum DeepLink: Hashable {
+enum TabType: Hashable {
     case start
     case foodList
     case author
@@ -16,39 +16,53 @@ enum DeepLink: Hashable {
 
 struct RootView: View {
 
-    @State private var link = DeepLink.start
+    @State private var tab = TabType.start
     @State private var foodOpeningIndex: Int?
 
     var body: some View {
-        TabView(selection: $link) {
-            StartView(link: $link, foodOpeningIndex: $foodOpeningIndex)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "bolt")
-                        Text("Start")
-                    }
-            }
-            .tag(DeepLink.start)
-
-            FoodListView(indexForOpening: $foodOpeningIndex)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "suit.heart")
-                        Text("Food")
-                    }
-            }
-            .tag(DeepLink.foodList)
-
-            AuthorView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "star")
-                        Text("Author")
-                    }
-            }
-            .tag(DeepLink.author)
+        TabView(selection: $tab) {
+            startView
+            foodListView
+            authorView
         }
     }
+}
+
+private extension RootView {
+
+    var startView: some View {
+        StartModuleBuilder.makeView(tab: $tab, foodOpeningIndex: $foodOpeningIndex)
+            .tabItem {
+                VStack {
+                    Image(systemName: "bolt")
+                    Text("Start")
+                }
+        }
+        .tag(TabType.start)
+    }
+
+    var foodListView: some View {
+        FoodListModuleBuilder.makeView(indexForOpening: $foodOpeningIndex)
+            .tabItem {
+                VStack {
+                    Image(systemName: "suit.heart")
+                    Text("Food")
+                }
+        }
+        .tag(TabType.foodList)
+    }
+
+    var authorView: some View {
+        AuthorView()
+            .tabItem {
+                VStack {
+                    Image(systemName: "star")
+                    Text("Author")
+                }
+        }
+        .tag(TabType.author)
+    }
+
 }
 
 struct RootView_Previews: PreviewProvider {

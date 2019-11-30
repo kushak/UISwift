@@ -7,3 +7,14 @@
 //
 
 import Foundation
+import SwiftUI
+
+enum FoodListModuleBuilder {
+
+    static func makeView(indexForOpening: Binding<Int?>) -> some View {
+        return FoodListView(
+            indexForOpening: indexForOpening,
+            viewModel: FoodListViewModel()
+        )
+    }
+}
