@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  FoodView.swift
 //  01-SwiftUIApp
 //
 //  Created by Oleg Shipulin on 29.11.2019.
@@ -8,14 +8,15 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct FoodView: View {
+    let foodName: String
     var body: some View {
-        Text("Hello, World!")
+        Text("❤️" + foodName)
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct FoodView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        FoodView(foodName: "apple")
     }
 }
