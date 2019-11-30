@@ -388,7 +388,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"01-SwiftUIApp/Preview Content\"";
 				DEVELOPMENT_TEAM = HS76VV6WJD;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "01-SwiftUIApp/Info.plist";
+				INFOPLIST_FILE = "01-SwiftUIApp/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +408,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"01-SwiftUIApp/Preview Content\"";
 				DEVELOPMENT_TEAM = HS76VV6WJD;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "01-SwiftUIApp/Info.plist";
+				INFOPLIST_FILE = "01-SwiftUIApp/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
